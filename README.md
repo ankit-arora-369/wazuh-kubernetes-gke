@@ -62,10 +62,6 @@ The *instructions.md* file describes how to deploy Wazuh on Kubernetes.
 
 * `master` branch contains the latest code, be aware of possible bugs on this branch.
 
-## Contribute
-
-If you want to contribute to our project please don't hesitate to send a pull request. You can also join our users [mailing list](https://groups.google.com/d/forum/wazuh), by sending an email to [wazuh+subscribe@googlegroups.com](mailto:wazuh+subscribe@googlegroups.com), to ask questions and participate in discussions.
-
 ## Credits and Thank you
 
 Based on the previous work from wazuh-kubernetes [wazuh/wazuh-kubernetes](https://github.com/wazuh/wazuh-kubernetes) (2020/02/09).
