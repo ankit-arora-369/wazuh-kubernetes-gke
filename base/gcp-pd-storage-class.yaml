@@ -1,0 +1,17 @@
+# Copyright (C) 2018 Wazuh Inc.
+#
+# This program is a free software; you can redistribute it
+# and/or modify it under the terms of the GNU General Public
+# License (version 2) as published by the FSF - Free Software
+# Foundation.
+
+# Wazuh StorageClass
+
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+        name: wazuh-pd-standard-retained
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+reclaimPolicy: Retain  # Useful in case you delete the PersistentVolumeClaim

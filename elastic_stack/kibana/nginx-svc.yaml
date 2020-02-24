@@ -1,0 +1,27 @@
+# Copyright (C) 2018 Wazuh Inc.
+#
+# This program is a free software; you can redistribute it
+# and/or modify it under the terms of the GNU General Public
+# License (version 2) as published by the FSF - Free Software
+# Foundation.
+
+# Nginx service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: wazuh-nginx
+  namespace: wazuh
+  labels:
+    app: wazuh-nginx
+spec:
+  type: LoadBalancer
+  selector:
+    app: wazuh-nginx
+  ports:
+    - name: web-http
+      port: 80
+      targetPort: 80
+    - name: web-https
+      port: 443
+      targetPort: 443

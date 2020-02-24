@@ -1,0 +1,19 @@
+kind: Ingress
+metadata:
+  name: wazuh-nginx-ingress
+  namespace: wazuh
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: <Enter Reserved EIP name here>
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    kubernetes.io/ingress.allow-http: "false"
+spec:
+  tls:
+  - secretName: <Enter k8s SecretName here>
+  rules:
+    - host: www.example.com
+      http:
+        paths:
+        - backend:
+            serviceName: wazuh-nginx
+            servicePort: 443
